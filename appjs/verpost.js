@@ -18,6 +18,7 @@ $(document).ready(function(){
 		  		var storageRef = storage.ref();
 		  		storageRef.child(data.imagen).getDownloadURL().then(function(url) {
 				  var img = document.getElementById('txtImagenPost');
+          console.log(url);
 				  img.src = url;
 				}).catch(function(error) {
 				  // Handle any errors
@@ -26,7 +27,7 @@ $(document).ready(function(){
 		  		txtDescargaDocumento.remove();
 		  	}
 		  	if(data.imagen != undefined){
-		  		
+
 		  	}else{
 		  		txtImagenPost.remove();
 		  	}

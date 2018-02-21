@@ -5,19 +5,19 @@ $(document).ready(function(){
     admin.validarDesconectado();
     admin.getPerfil(txtEmail, imgPerfil);
 
+
+
     function getStrPost(strTitulo, strImagen, strDescripcion, index){
-      var post ='<div class="post post-dash p-3 box-shadow mb-5 ">';
-      post +='<div class="title">';
-      post +='<h4>'+strTitulo+'</h4> ';
+      var   post ='<div class="cards">';
+      post +='<div class="cards-img"><img src="'+strImagen+'" alt=""></div>';
+      post +='<div class="cards-title">';
+      post +='<h1>'+strTitulo+'</h1>';
       post +='</div>';
-      post +='<div class="img-post">';
-      post +='<img src="'+strImagen+'" class="img-fluid" alt=""> ';
+      post +='<div class="cards-content hidden-text">';
+      post +='<p>'+strDescripcion+'</p>';
       post +='</div>';
-      post +='<div class="descripcion">';
-      post +='<p>'+strDescripcion+'</p> ';
-      post +='</div>';
-      post +='<div class="ver_mas box">';
-      post +='<a href="./verpost.html?id='+index+'" class="box-shadow">ver mas ..</a> ';
+      post +='<div class="cards-button">';
+      post +='<a href="./verpost.html?id='+index+'">ver mas ...</a>';
       post +='</div>';
       post +='</div>';
         return $(post);

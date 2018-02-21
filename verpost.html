@@ -1,91 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="css/estyle.css">
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
-  <title>VER POST</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Educación-ver-post</title>
 </head>
-<body class="body-color">
-  <div class="nav-main fixed-top px-3 py-2 box-shadow ">
-      <div class="row align-items-center justify-content-between">
-          <div class="col-1 col-sm-4">
-              <li class="fa fa-bars hidden-md-up" id="btn_menu"></li>
-              <h1 class="nav-title hidden-sm-down">Educación</h1>
+<body>
+    <div class="container-main">
+        <div class="navbar-main">
+          <div class="icon" id="btn_menu">
+            <i class="fa fa-bars icon-menu" aria-hidden="true"></i>
           </div>
-          <div class="col-10 col-sm-6">
-              <input type="search" name="" value="" placeholder="buscar" class="w-100">
-          </div>
-      </div>
-  </div>
-  <div class="container-fluid mt-5">
-      <div class="row min-height">
-          <div class="col-auto sidenav box-shadow movil-first">
-              <div class="fixed d-flex flex-column align-items-center">
-                <div class="encabezado">
-                    <div class="img text-center mb-2 pt-3">
-                        <img id="imgPerfil" src="images/perfil.jpg" alt="" class="img-fluid img-circle box-shadow">
-                    </div>
-                    <p  id="txtEmail" class="email">correo.correo.com</p>
+          <h1>Educación</h1>
+        </div>
+        <div class="aside" id="aside">
+            <div class="aside-header">
+                <div class="aside-header-content">
+                  <img id="imgPerfil" src="diez.jpg" alt="" class="aside-header-img">
+                  <p class="aside-header-email" id="txtEmail"></p>
                 </div>
-                <div class="nav">
-                     <a style="display: none;" id="navAdministrar" href="./administrar.html" class="active"><i class="fa fa-cogs"></i>  Administrar</a>
-                    <a href="./dashboard.html" class=""><i class="fa fa-book"></i>Ver Post</a>
+            </div>
+            <ul class="aside-nav">
+              <li><a class="aside-nav-item" href="index.html"><i class="fa fa-book"></i><span>VER POST</span></a></li>
+            </ul>
+        </div>
+        <div class="main" id="main">
+            <div class="container-cards">
+              <div class="cards-indiv">
+                <div class="cards-img center">
+                    <img  id="txtImagenPost" src="" alt="">
                 </div>
-              </div>
-          </div>
-          <div class="col page pt-4 px-4">
-              <div class="row">
-                  <div class="col-12">
-                      <div class="post ver-post p-3 box-shadow mb-3">
-                          <div class="ver-post_img">
-                              <img id="txtImagenPost" src="images/perfil.jpg" alt="" class="box-shadow">
-                          </div>
-                              <h4 id="txtTituloPost" class="ver-post_titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta illum itaque quae nihil architecto </h4>
-                          <div class="ver-post_contenido mb-4">
-                              <p id="txtContenidoPost">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem commodi officiis pariatur optio,
-                                a deserunt non quae debitis cumque, assumenda illum, et quod cum aut veritatis vel perspiciatis!
-                                Eum iusto id optio, nobis animi nulla corporis amet quas necessitatibus culpa accusantium quidem
-                                nihil consequatur, odit illo dolores. Excepturi molestias hic commodi, fugiat tenetur soluta
-                                 ullam ea nulla possimus aliquid! Laboriosam deserunt quae, et nam aut accusantium odio similique
-                                  qui possimus veritatis ducimus facere voluptatibus perferendis fugit itaque rerum
-                                exercitationem. Minima nesciunt assumenda debitis modi, doloremque veritatis numquam,
-                                 non maxime magni sequi iusto, natus aut necessitatibus nemo cupiditate error eius libero.
-                                 Alias nobis quae soluta ab aspernatur, dolorum eaque debitis inventore odit cumque eum
-                                  repudiandae delectus, mollitia, magnam commodi maxime veniam fugit omnis sint quam pariatur in.
-                                  Possimus deserunt numquam ipsa, ratione aut voluptas error nobis, quae et dicta beatae accusantium soluta
-                                tenetur consectetur blanditiis animi. Laudantium ipsa, eligendi quia nesciunt!</p>
-                          </div>
-                          <div class="download mb-4">
-                              <p>Ver Video</p>
-                              <a href="">www.youtube.com</a>
-                          </div>
-                          <div class="download mb-4">
-                              <p>Decargar Documento</p>
-                              <a id="txtDescargaDocumento" href="">www.youtube.com</a>
-                          </div>
-                      </div>
+                <div class="cards-body">
+                  <div class="cards-title">
+                    <h1 id="txtTituloPost"></h1>
                   </div>
+                  <div class="cards-content">
+                      <p id="txtContenidoPost"></p>
+                  </div>
+                  <div class="cards-details">
+                    <h1>descargar documentos</h1>
+                      <a id="txtDescargaDocumento" href="">Descargar</a>
+                  </div>
+                  <div class="cards-details">
+                    <h1>ver video</h1>
+                      <a  href="">www.youtube.com</a>
+                  </div>
+                </div>
               </div>
-          </div>
-      </div>
-  </div>
+            </div>
+        </div>
+    </div>
 
-<script src="js/jquery.min.js" charset="utf-8"></script>
-<script src="js/tether.min.js" charset="utf-8"></script>
-<script src="js/bootstrap.min.js" charset="utf-8"></script>
-<script src="js/funciones.js" charset="utf-8"></script>
-
-<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-<script type="text/javascript" src="appjs/firebaseconfig.js"></script>
-<script type="text/javascript" src="appjs/administracion.js"></script>
-<script type="text/javascript" src="appjs/verpost.js"></script>
-
-</body>
-
-</html>
+    <script src="js/jquery.min.js" charset="utf-8"></script>
+    <script src="js/tether.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/funciones.js" charset="utf-8"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script type="text/javascript" src="appjs/firebaseconfig.js"></script>
+    <script type="text/javascript" src="appjs/administracion.js"></script>
+    <script type="text/javascript" src="appjs/verpost.js"></script>
+    </body>
+    </html>
