@@ -31,12 +31,15 @@ $(document).ready(function () {
     };
 
     function validarCampos(){
+        var lstFoto = document.getElementById('txtFoto');
         if(txtTitulo.val() == ""){
             return false;
         }else if(txtDescripcion.val() == ""){
             return false;
         }else if(txtContenido.val() == ""){
             return false;
+        }if(lstFoto.files.length > 0){
+            return ValidarImagen(lstFoto);
         }else{
             return true;
         }
@@ -119,9 +122,17 @@ $(document).ready(function () {
             rutaVideo: txtRutaVideo.val(),
             contenido: txtContenido.val(),
             fecha: postGlobal.fecha,
-            archivo: postGlobal.archivo,
-            imagen: postGlobal.imagen
+            
+            
         } 
+        if(postGlobal.imagen != undefined){
+            objPost.imagen =postGlobal.imagen;
+        }
+
+        if(postGlobal.archivo =! undefined){
+            objPost.archivo = postGlobal.archivo;
+        }
+
         firebase.database().ref().child('post').child(postGlobal.index).set(objPost);
         if (lstArchivo.length > 0 || lstFoto.length > 0){
             swal({
@@ -230,6 +241,35 @@ $(document).ready(function () {
         });       
 
     });
+
+    function ValidarImagen(obj){
+    var uploadFile = obj.files[0];
+    
+    if (!window.FileReader) {
+        alert('El navegador no soporta la lectura de archivos');
+        return;
+    }
+
+    if (!(/\.(jpg|png|gif)$/i).test(uploadFile.name)) {
+        alert('El archivo a adjuntar no es una imagen');
+    }
+    else {
+        var img = new Image();
+        img.onload = function () {
+            if (this.width.toFixed(0) != 960 && this.height.toFixed(0) != 640) {
+                alert('Las medidas deben ser: 960 * 640');
+            }
+            else if (uploadFile.size > 20000)
+            {
+                alert('El peso de la imagen no puede exceder los 200kb')
+            }
+            else {
+                alert('Imagen correcta :)')                
+            }
+        };
+        img.src = URL.createObjectURL(uploadFile);
+    }                 
+}
 
     /*Inicio*/ 
     consultarPost();

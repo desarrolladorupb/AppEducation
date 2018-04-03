@@ -38,6 +38,10 @@ $(document).ready(function(){
         });
     };
 
+    $("#btnCerrarSesion").on("click", function(){
+      admin.cerrarSesion();
+    });
+
     consultarPost();
     admin.isAdmin();
 });
