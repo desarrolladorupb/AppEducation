@@ -28,7 +28,7 @@ $(document).ready(function(){
 				});
 		  	}
 		  	if(data.rutaVideo != undefined && data.rutaVideo != null && data.rutaVideo != ""){
-		  		ifVideo.attr("src", data.rutaVideo);
+					ifVideo.attr("src", data.rutaVideo);					
 		  	}else{
 		  		$("#divIframeVideo").remove();
 		  	}
