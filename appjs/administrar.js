@@ -30,20 +30,27 @@ $(document).ready(function () {
         txtContenido.val("");
     };
 
-    function validarCampos(){
-        var lstFoto = document.getElementById('txtFoto');
-        if(txtTitulo.val() == ""){
-            return false;
-        }else if(txtDescripcion.val() == ""){
-            return false;
-        }else if(txtContenido.val() == ""){
-            return false;
-        }if(lstFoto.files.length > 0){
-            return ValidarImagen(lstFoto);
-        }else{
-            return true;
+    function validarCampos(img){
+        var validate = true;
+        $(".errors").remove();
+        console.log(img);
+
+        if(img == true ){
+            if (!$("#txtFoto").val()){
+                $("#txtFoto").after('<span class="errors"><li class="fa fa-warning"></li> El campo es obligatorio</span>');
+                validate = false;
+            }
         }
+
+        $("#txtTitulo,#txtDescripcion,#txtContenido").each(function(i,item){
+            if(!$(this).val()){
+                $(this).after('<span class="errors"><li class="fa fa-warning"></li> El campo es obligatorio</span>');
+                validate = false;
+            }
+        });
+        return validate;
     };
+
 
     function guardarArchivo(htmlFile, carpeta, index, tipo){
         var fileImagenes = document.getElementById(htmlFile).files[0];
@@ -188,25 +195,33 @@ $(document).ready(function () {
     /*Eventos */
     $("#new_post").click(function () {
         limpiarCampos();
+        $(".errors").remove();
         accion = lstAcciones.nueva;
         $("#add_post").modal("show");
     });
 
     $("#btnGuardar").on("click", function(){
-        if(validarCampos()){
+
             if(accion == lstAcciones.nueva){
-                guardar();
-                accion = null;
+                if (validarCampos(true)){
+                    guardar();
+                    accion = null;
+                }
+               
             }else if (accion == lstAcciones.modificar){
-                modificar();
-                accion = null;
-                postGlobal = null;
+                if (validarCampos(false)) {
+                    modificar();
+                    accion = null;
+                    postGlobal = null;
+                }
+                
             }
-        }
     });
 
     $(document).on("click",".btn-editar",function(){
         limpiarCampos();
+        $(".errors").remove();
+        
         var $this = $(this);
         var $tr = $($this.parent().parent());
         postGlobal = $tr.data("data");
@@ -244,32 +259,39 @@ $(document).ready(function () {
 
     function ValidarImagen(obj){
     var uploadFile = obj.files[0];
-    
     if (!window.FileReader) {
-        alert('El navegador no soporta la lectura de archivos');
+        swal('','El navegador no soporta la lectura de archivos','info');
         return;
     }
 
     if (!(/\.(jpg|png|gif)$/i).test(uploadFile.name)) {
-        alert('El archivo a adjuntar no es una imagen');
+        swal('','El archivo a adjuntar no es una imagen','info');
     }
     else {
         var img = new Image();
         img.onload = function () {
             if (this.width.toFixed(0) != 960 && this.height.toFixed(0) != 640) {
-                alert('Las medidas deben ser: 960 * 640');
+                swal('','Las medidas deben ser: 960 * 640','info');
             }
-            else if (uploadFile.size > 20000)
+            else if (uploadFile.size > 200000)
             {
-                alert('El peso de la imagen no puede exceder los 200kb')
+                swal('','El peso de la imagen no puede exceder los 200kb','info')
             }
             else {
-                alert('Imagen correcta :)')                
+                $("#txtFoto + span.errors").remove();               
             }
         };
         img.src = URL.createObjectURL(uploadFile);
     }                 
 }
+
+    txtFoto.on('change', (e) => {
+        if ($(e.currentTarget).val()) {
+            var lstFoto = document.getElementById('txtFoto');
+            console.log(lstFoto);
+            ValidarImagen(lstFoto);
+        }
+    })
 
     /*Inicio*/ 
     consultarPost();

@@ -97,6 +97,9 @@
 
 /*fin de los estilos del login*/
 
+.errors{
+  color: var(--color_red);
+}
 
  .container-main {
    width: 100%;
@@ -257,9 +260,9 @@
  }
 
  .cards-title>h1 {
-   font-size: 1.5em;
+   font-size: 1.2em;
    font-weight: 400;
-   margin: .3em 0;
+   margin: .2em 0;
    padding: .2em 1em;
  }
 
@@ -330,6 +333,7 @@
    color:#ff0018;
    background: black;
    text-decoration: none;
+   -webkit-transition: all .3s linear;
    transition: all .3s linear;
    padding: .3em 1em;
    border-radius: .5em;
@@ -406,6 +410,16 @@
     color: #0275d8;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+
+#divIframeVideo{
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 
