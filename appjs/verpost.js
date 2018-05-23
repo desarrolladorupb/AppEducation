@@ -28,7 +28,8 @@ $(document).ready(function(){
 				});
 		  	}
 		  	if(data.rutaVideo != undefined && data.rutaVideo != null && data.rutaVideo != ""){
-					ifVideo.attr("src", data.rutaVideo);					
+					var video = data.rutaVideo.replace('watch?v=','embed/');
+					ifVideo.attr("src", video);					
 		  	}else{
 		  		$("#divIframeVideo").remove();
 		  	}
