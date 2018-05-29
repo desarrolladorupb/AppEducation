@@ -271,11 +271,11 @@ $(document).ready(function () {
         var img = new Image();
         img.onload = function () {
             if (this.width.toFixed(0) < 960 && this.height.toFixed(0) < 640) {
-                swal('','Las medidas deben ser: 960 * 640','info');
+                swal('','Las medidas deben ser mayor a: 960 * 640','info');
             }
-            else if (uploadFile.size > 200000)
+            else if (uploadFile.size > 3000000)
             {
-                swal('','El peso de la imagen no puede exceder los 200kb','info')
+                swal('','El peso de la imagen no puede exceder los 3MG','info')
             }
             else {
                 $("#txtFoto + span.errors").remove();               
