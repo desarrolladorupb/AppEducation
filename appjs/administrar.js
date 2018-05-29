@@ -270,7 +270,7 @@ $(document).ready(function () {
     else {
         var img = new Image();
         img.onload = function () {
-            if (this.width.toFixed(0) != 960 && this.height.toFixed(0) != 640) {
+            if (this.width.toFixed(0) < 960 && this.height.toFixed(0) < 640) {
                 swal('','Las medidas deben ser: 960 * 640','info');
             }
             else if (uploadFile.size > 200000)
