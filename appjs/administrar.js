@@ -4,6 +4,13 @@ $(document).ready(function () {
     var txtDescripcion = $("#txtDescripcion");
     var txtFoto = $("#txtFoto");
     var txtRutaVideo = $("#txtRutaVideo");
+    var txtRutaVideoTwo = $("#txtRutaVideoTwo");
+    var txtRutaVideoThree = $("#txtRutaVideoThree");
+    var txtRutaVideoFour = $("#txtRutaVideoFour");
+    var txtDocumentoOne = $("#txtDocumentoOne");
+    var txtDocumentoTwo = $("#txtDocumentoTwo");
+    var txtDocumentoThree = $("#txtDocumentoThree");
+    var txtDocumentoFour = $("#txtDocumentoFour");
     var txtArvhivo = $("#txtArvhivo");
     var txtContenido = $("#txtContenido");
     var txtNombreUsuario = $("#txtNombreUsuario");
@@ -26,6 +33,13 @@ $(document).ready(function () {
         txtDescripcion.val("");
         txtFoto.val("");
         txtRutaVideo.val("");
+        txtRutaVideoTwo.val("");
+        txtRutaVideoThree.val("");
+        txtRutaVideoFour.val("");
+        txtDocumentoOne.val("");
+        txtDocumentoTwo.val("");
+        txtDocumentoThree.val("");
+        txtDocumentoFour.val("");
         txtArvhivo.val("");
         txtContenido.val("");
     };
@@ -85,6 +99,13 @@ $(document).ready(function () {
             titulo: txtTitulo.val(),
             descripcion: txtDescripcion.val(),
             rutaVideo: txtRutaVideo.val(),
+            rutaVideoTwo: txtRutaVideoTwo.val(),
+            rutaVideoThree: txtRutaVideoThree.val(),
+            rutaVideoFour: txtRutaVideoFour.val(),
+            documentoOne: txtDocumentoOne.val(),
+            documentoTwo: txtDocumentoTwo.val(),
+            documentoThree: txtDocumentoThree.val(),
+            documentoFour: txtDocumentoFour.val(),
             contenido: txtContenido.val(),
             fecha : dat.toUTCString()
         } 
@@ -127,6 +148,13 @@ $(document).ready(function () {
             titulo: txtTitulo.val(),
             descripcion: txtDescripcion.val(),
             rutaVideo: txtRutaVideo.val(),
+            rutaVideoTwo: txtRutaVideoTwo.val(),
+            rutaVideoThree: txtRutaVideoThree.val(),
+            rutaVideoFour: txtRutaVideoFour.val(),
+            documentoOne: txtDocumentoOne.val(),
+            documentoTwo: txtDocumentoTwo.val(),
+            documentoThree: txtDocumentoThree.val(),
+            documentoFour: txtDocumentoFour.val(),
             contenido: txtContenido.val(),
             fecha: postGlobal.fecha,
             
@@ -228,6 +256,13 @@ $(document).ready(function () {
         txtTitulo.val(postGlobal.titulo);
         txtDescripcion.val(postGlobal.descripcion);
         txtRutaVideo.val(postGlobal.rutaVideo);
+        txtRutaVideoTwo.val(postGlobal.rutaVideoTwo);
+        txtRutaVideoThree.val(postGlobal.rutaVideoThree);
+        txtRutaVideoFour.val(postGlobal.rutaVideoFour);
+        txtDocumentoOne.val(postGlobal.documentoOne);
+        txtDocumentoTwo.val(postGlobal.documentoTwo);
+        txtDocumentoThree.val(postGlobal.documentoThree);
+        txtDocumentoFour.val(postGlobal.documentoFour);
         txtContenido.val(postGlobal.contenido);
         accion = lstAcciones.modificar;
         $("#add_post").modal("show");
